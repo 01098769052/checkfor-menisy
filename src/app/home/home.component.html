@@ -1,0 +1,26 @@
+<section class="border text-center p-5 container">
+    <p>home works!</p>
+
+    <hr>
+
+    <!-- Data-Interpolation  -->
+    <h2>{{username}}</h2>
+    <h3>Age:{{userage}}</h3>
+    <hr>
+    <p>Salary : {{calcSalary()}}</p>
+    <!-- Property-Binding (Built-in)  -->
+    <img [src]="imgSrc" [alt]="imgAlt" >
+    <input type="text" [placeholder]="placeholder">
+    <button class="btn btn-danger" [disabled]="isDisabled">OKKKK</button>
+
+    <!-- Event-Binding -->
+    <button class="btn btn-success" (click)="test()" (mouseenter)="test()">Click Me</button>
+    <input type="text" name="" (keydown)="sayHello($event)" id="">
+    <!-- attribute-Binding -->
+    <a [href]="username" [attr.data-hamada]="username"></a>
+    <!-- Style-Binding -->
+    <h3 [style.background-color]="isAdmin==true?red:'green'">Test</h3>
+    <!-- Class-Binding -->
+     <h2 [class.bg-danger]="isAdmin==true?true:false">hello,ay hagaa</h2>
+    <h1 [class]="isAdmin?'text-end bg-primary ':'text-white'">class Bniding</h1>
+    </section>

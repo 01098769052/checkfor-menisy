@@ -1,0 +1,10 @@
+{
+  "routes": [
+    "/about",
+    "/gallery",
+    "/gallery/animals",
+    "/gallery/flowers",
+    "/gallery/food",
+    "/home"
+  ]
+}

@@ -1,0 +1,76 @@
+<!-- directive <====Control-Flow  (for  , if(  show or Hide(Delet From Dom) )  , switch  )====> 17 ----->
+
+<!-- @for(item of friends ; track $index){
+    <h2>{{item}}</h2>
+} -->
+
+@if(role=="admin"){
+  <h2>Hello {{role}}</h2>
+}@else if (role =="user") {
+  <h2>hello , {{role}}</h2>
+}@else {
+  <h2>Not,ALLOWED</h2>
+}
+
+
+<hr>
+<section>
+  <div class="container">
+    <div class="row g-3">
+      @for(product of products ; track product.id){
+
+        <div class="col-md-4 shadow "  [class]="product.onSale?'text-center bg-success':'text-danger '">
+          <h2>{{$index + 1}}</h2>
+           <img [src]="product.imgSrc" class="w-100" alt="" />
+           <div class="text-center">
+             <h3>{{ product.name }}</h3>
+             <h5>{{$first}}</h5>
+             <h4>{{$even}}</h4>
+             <div class="d-flex justify-content-between px-3">
+               <h6>{{ product.onSale }}</h6>
+               <p>{{ product.price }}</p>
+               <h6>{{$count}}</h6>
+             </div>
+           </div>
+         </div>
+      
+      }@empty {
+        <h1 class="text-center border p-3 mt-5 bg-danger text-white">No Data Found</h1>
+      }
+    </div>
+  </div>
+</section>
+<hr>
+
+
+
+
+
+
+<!-- Two Way Data Binding  -->
+
+<input type="text" class="border mt-5 form-control"  [(ngModel)]="data" >
+<h2>{{data}}</h2>
+
+
+
+
+
+
+
+<!-- Lazy-Loading......... -->
+<!-- @defer (on or when){} -->
+<!-- timer(10s) , interaction (buttons) , hover-->
+<h1>Recommended Products....</h1>
+
+<!-- <button #show>Show More...</button>
+@defer (on interaction(show)) {
+  <app-recmmend></app-recmmend>
+} -->
+
+
+
+<button #show>Show More...</button>
+@defer (on interaction(show)) {
+  <app-recmmend></app-recmmend>
+}

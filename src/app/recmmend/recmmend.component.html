@@ -1,0 +1,11 @@
+<section>
+    <div class="container">
+      <div class="row g-3">
+       @for(product of products ; track $index){
+        <div class="col-md-4 shadow">
+            <img [src]="product.imgSrc" class="w-100" alt="">
+        </div>
+       }
+      </div>
+    </div>
+  </section>
